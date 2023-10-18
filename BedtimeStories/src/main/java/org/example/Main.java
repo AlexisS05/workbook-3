@@ -7,9 +7,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         try{
-            FileInputStream file1 = new FileInputStream("goldilocks.txt");
-            FileInputStream file2 = new FileInputStream("hansel_and_gretel.txt");
-            FileInputStream file3 = new FileInputStream("mary_had_a_little_lamb.txt");
+            FileInputStream file = null;
 
             Scanner scanner = new Scanner(System.in);
 
@@ -21,13 +19,16 @@ public class Main {
                 char choice = getStringInput(scanner, "Enter the number of a story to read: ");
                 switch (choice) {
                     case '1':
-                        displayOutput(input, lineNum, file1);
+                        file = new FileInputStream("goldilocks.txt");
+                        displayOutput(input, lineNum, file);
                         break;
                     case '2':
-                        displayOutput(input, lineNum, file2);
+                        file = new FileInputStream("hansel_and_gretel.txt");
+                        displayOutput(input, lineNum, file);
                         break;
                     case '3':
-                        displayOutput(input, lineNum, file3);
+                        file = new FileInputStream("mary_had_a_little_lamb.txt");
+                        displayOutput(input, lineNum, file);
                         break;
                     default:
                         System.out.println("Sorry I couldn't get that. Please try again.");
