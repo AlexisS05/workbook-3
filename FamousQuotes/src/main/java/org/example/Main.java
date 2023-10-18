@@ -20,7 +20,6 @@ public class Main {
                 "Be open! It can lead to new paths."
 
         };
-        boolean done = false;
         try {
             char choice = tryAgainInput(scanner, "Would you like to enter a number for a quote? if yes, type (Y), if no you will generate a random quote. type(N): ");
             switch (choice) {
@@ -36,7 +35,6 @@ public class Main {
                             System.out.println("Sorry, that's not a valid number between 1 and 10. Please try again.");
                         }
                     }
-                    break;
                 }
                 case 'N': {
                     int randomNum = getRandomNumber(1, 10);
@@ -46,6 +44,7 @@ public class Main {
                 default:
                     System.out.println("Something happened!");
             }
+            repromptUser(scanner);
         } catch (Exception e) {
             System.out.println("Sorry I couldn't get that. Please try again. ");
         }
