@@ -16,7 +16,8 @@ public class Main {
 
                 String[] tokens = input.split("\\|");
 
-                Employee employee = new Employee(Integer.parseInt(tokens[0]), tokens[1], Integer.parseInt(tokens[2]), d[3]);
+                Employee employee = new Employee(Integer.parseInt(tokens[0]), tokens[1], Integer.parseInt(tokens[2]), Double.parseDouble(tokens[3]));
+                System.out.println(employee);
 
             }
         } catch (IOException e){
