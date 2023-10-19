@@ -21,18 +21,6 @@ public class Employee {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getHoursWorked() {
-        return hoursWorked;
-    }
-
-    public double getPayRate() {
-        return payRate;
-    }
-
     public double getGrossPay(){
         return hoursWorked * payRate;
     }
