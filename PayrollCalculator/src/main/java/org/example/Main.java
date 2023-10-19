@@ -10,15 +10,17 @@ public class Main {
             FileReader fileReader = new FileReader("employees.csv");
 
             BufferedReader bufReader = new BufferedReader(fileReader);
-            String input;
+            String input = null;
+
+            bufReader.readLine();
 
             while((input = bufReader.readLine()) != null) {
 
                 String[] tokens = input.split("\\|");
 
-                Employee employee = new Employee(Integer.parseInt(tokens[0]), tokens[1], Integer.parseInt(tokens[2]), Double.parseDouble(tokens[3]));
-                System.out.println(employee);
-
+                Employee employee = new Employee(Integer.parseInt(tokens[0]), tokens[1], Double.parseDouble(tokens[2]), Double.parseDouble(tokens[3]));
+                System.out.printf("Here is the Employee ID: %d%nHere is the employee name: %s%nHere is the employee gross pay: %.2f%n",
+                        employee.getEmployeeId(), employee.getName(), employee.getGrossPay());
             }
         } catch (IOException e){
             e.printStackTrace();
